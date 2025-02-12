@@ -1,0 +1,13 @@
+[Unit]
+Description=Read plc using fins
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/node /opt/tesfins/index.js
+Restart=always
+RestartSec=10s
+Type=simple
+WorkingDirectory=/opt/tesfins
+
+[Install]
+WantedBy=multi-user.target
