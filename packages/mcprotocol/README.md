@@ -89,6 +89,11 @@ For the full address syntax and configurator setup notes, see the
 Direct connection to FX3U-ENET / FX3U-ENET-ADP. Q-series E71 should work in
 theory (same frames). Serial and UDP are not supported.
 
+## Changelog
+
+`1.0.0` — fork of `mcprotocol@0.1.2` with the ASCII 3E TCP frame reassembly fix.
+Full details in [CHANGELOG.md](./CHANGELOG.md).
+
 ## License
 
 [MIT](LICENSE) — © 2015 Dana Moffit (original), © 2026 Rifky Andigta Al-Fathir

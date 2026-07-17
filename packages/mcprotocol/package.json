@@ -17,12 +17,16 @@
     "ascii"
   ],
   "license": "MIT",
-  "author": "Rifky Andigta Al-Fathir",
+  "author": "Dana Moffit",
+  "contributors": [
+    "Rifky Andigta Al-Fathir (@digta fork)"
+  ],
   "main": "mcprotocol.js",
   "exports": "./mcprotocol.js",
   "files": [
     "mcprotocol.js",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "repository": {
@@ -34,6 +38,6 @@
     "test": "node test/reassembly.test.js"
   },
   "dependencies": {
-    "underscore": "^1.0.0"
+    "underscore": "^1.13.1"
   }
 }
