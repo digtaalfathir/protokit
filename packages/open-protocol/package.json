@@ -1,0 +1,35 @@
+{
+  "name": "@digta/open-protocol",
+  "version": "1.0.0",
+  "description": "Builder and parser for Atlas Copco Open Protocol MID frames (ASCII). Zero dependencies. Not related to Protocol Buffers.",
+  "keywords": [
+    "open-protocol",
+    "atlas-copco",
+    "tightening",
+    "torque",
+    "nutrunner",
+    "mid",
+    "assembly-tool",
+    "industrial",
+    "iot",
+    "tcp",
+    "ascii"
+  ],
+  "license": "MIT",
+  "author": "Rifky Andigta Al-Fathir",
+  "main": "openProtocol.js",
+  "exports": "./openProtocol.js",
+  "files": [
+    "openProtocol.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digtaalfathir/protokit.git",
+    "directory": "packages/open-protocol"
+  },
+  "scripts": {
+    "test": "node test/roundtrip.test.js"
+  }
+}
