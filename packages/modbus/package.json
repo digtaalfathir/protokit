@@ -1,0 +1,31 @@
+{
+  "name": "@digta/modbus",
+  "version": "0.1.0",
+  "description": "Modbus TCP/RTU client for industrial PLC communication. Placeholder — implementation in progress.",
+  "keywords": [
+    "modbus",
+    "modbus-tcp",
+    "modbus-rtu",
+    "industrial",
+    "plc",
+    "iot",
+    "serial",
+    "tcp",
+    "scada"
+  ],
+  "license": "MIT",
+  "author": "Rifky Andigta Al-Fathir",
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digtaalfathir/protokit.git",
+    "directory": "packages/modbus"
+  },
+  "devDependencies": {
+    "modbus-serial": "^8.0.18"
+  }
+}

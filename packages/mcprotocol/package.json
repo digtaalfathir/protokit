@@ -1,0 +1,29 @@
+{
+  "name": "@digta/mcprotocol",
+  "version": "0.1.0",
+  "description": "Mitsubishi MELSEC MC Protocol (SLMP) client for industrial PLC communication. Placeholder — implementation in progress.",
+  "keywords": [
+    "mc-protocol",
+    "mcprotocol",
+    "mitsubishi",
+    "melsec",
+    "slmp",
+    "plc",
+    "industrial",
+    "iot",
+    "tcp",
+    "scada"
+  ],
+  "license": "MIT",
+  "author": "Rifky Andigta Al-Fathir",
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digtaalfathir/protokit.git",
+    "directory": "packages/mcprotocol"
+  }
+}

@@ -1,89 +1,93 @@
-# Omron FINS TCP for Data Acquisition
+# Protokit
 
-Omron Fins TCP is a protocol for communication between Omron PLCs and other devices. It is a TCP/IP based protocol. The fins plugin is used for Omron PLCs with network port, such as CP2E.
+> A kit of device communication protocols.
 
+Industrial device comms (Modbus, MC, Open Protocol) — not related to protobuf tooling.
 
-## Table of Contents
+Protokit is a monorepo of small, focused Node.js libraries for talking to
+industrial devices (PLCs, controllers, assembly tools). Each protocol is
+published as its own npm package under the [`@digta`](https://www.npmjs.com/org/digta)
+scope, so you install only the protocol you need.
 
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Service Management](#Service-Management-(Linux))
-- [Troubleshooting](#troubleshooting)
+## Packages
 
-## Prerequisites
+| Package | Protocol | Status | npm |
+|---|---|---|---|
+| [@digta/fins](packages/fins) | Omron FINS TCP | ✅ Working (app/service) | `npm i @digta/fins` |
+| [@digta/modbus](packages/modbus) | Modbus TCP/RTU | 🚧 Placeholder (demo in `examples/`) | `npm i @digta/modbus` |
+| [@digta/mcprotocol](packages/mcprotocol) | Mitsubishi MELSEC MC (SLMP) | 🚧 Placeholder | `npm i @digta/mcprotocol` |
+| [@digta/openprotocol](packages/openprotocol) | Atlas Copco Open Protocol | 🚧 Placeholder | `npm i @digta/openprotocol` |
 
-Ensure you have the following installed:
+**Status legend:** ✅ usable today · 🚧 scaffolded, implementation in progress.
 
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
-- Omron FINS Node.js library
-- CX Programmer (tested on v9.7)
+> **Note:** `@digta/openprotocol` is the Atlas Copco assembly-tool protocol,
+> **not** Google Protocol Buffers.
 
-## Installation
+## Install
 
-1. Clone the repository:
+Install any package on its own:
 
-    ```bash
-    git clone https://gitlab.com/source-code-documentation-hw-stechoq/playground/plc2pc-protocol.git
-    git checkout OmronFinsTCP
-    ```
-
-2. Install the necessary Node.js packages:
-
-    ```bash
-    npm install
-    ```
-
-3. Run the installation script as root to set up the systemd service:
-
-    ```bash
-    sudo ./install.sh
-    ```
-
-## Configuration
-
-The application configuration is handled in the `app.config.sample.js` file. Copy this file and rename it to `app.config.js`. Modify the values according to your setup.
-
-```javascript
-module.exports = {
-  plc: {
-    ip: '172.19.88.88',  // IP address of the PLC
-    intervalRead: 200   // Interval for reading the PLC (in milliseconds)
-  },
-  machineId: 27,  // Machine ID (DCS)
-  msg: [
-    { proxy: 1 }, // pin 00.00
-    { proxy: 1 }, // pin 00.01
-    { proxy: 1 }, // pin 00.02
-    { proxy: 1 }, // pin 00.03
-    { proxy: 1 }, // pin 00.04
-    { proxy: 1 }, // pin 00.05
-    { proxy: 1 }, // pin 00.06
-    { proxy: 1 }  // pin 00.07
-  ],
-  intervalBouncing: 5000,  // Delay between data transmissions
-  dcs: {
-    ip: '127.0.0.1',  // IP address of the DCS (localhost)
-    port: 3000        // Port of the DCS
-  }
-};
-```
-## Usage
-type in terminal, make sure you in right dir
-```
-node index.js
+```bash
+npm i @digta/fins
+npm i @digta/modbus
+npm i @digta/mcprotocol
+npm i @digta/openprotocol
 ```
 
-## Service Management (Linux)
- ```
-sudo systemctl start plcdcs.service  --> to start the service
-sudo systemctl enable plcdcs.service --> to enable service, so it can auto-start
-sudo systemctl status plcdcs.service --> to check the status of service
+## Development
+
+This repo uses **native npm workspaces** (no Lerna/Nx/Turborepo).
+
+```bash
+git clone https://github.com/digtaalfathir/protokit.git
+cd protokit
+npm install            # installs all workspaces + links them together
 ```
 
-## Troubleshooting
+Common workspace commands:
+
+```bash
+npm install                          # install deps for every package
+npm run start -w @digta/fins         # run a script in one package
+npm test --workspaces --if-present   # run tests across all packages
 ```
-sudo journalctl -u plcdcs.service
+
+## How to add a protocol package
+
+1. Create the folder: `packages/<name>/`.
+2. Add `packages/<name>/package.json`:
+   - `"name": "@digta/<name>"`, `"version": "0.1.0"`
+   - `description` + `keywords` (protocol, industrial, plc, iot, tcp, serial, …)
+   - `"license": "MIT"`, `"author": "Rifky Andigta Al-Fathir"`
+   - `main` / `exports` and a `"files"` field (publish only what's needed)
+   - `repository`: `{ "type": "git", "url": "git+https://github.com/digtaalfathir/protokit.git", "directory": "packages/<name>" }`
+3. Add `packages/<name>/index.js` (the entrypoint) and `packages/<name>/README.md`
+   (what the protocol is, install, a short usage example).
+4. Run `npm install` at the repo root to wire the new workspace in.
+5. Add a row to the [Packages](#packages) table above.
+
+## Publishing
+
+Packages are **not** published automatically. To publish (or update) a package:
+
+**Prerequisites (one-time):**
+
+- Create the npm organization **`digta`** (npmjs.com → *Add Organization*).
+- Log in locally: `npm login`.
+
+**Publish a package.** Scoped packages default to **private**, so you must pass
+`--access public`:
+
+```bash
+npm publish -w @digta/<name> --access public
 ```
+
+For example:
+
+```bash
+npm publish -w @digta/fins --access public
+```
+
+## License
+
+[MIT](LICENSE) © Rifky Andigta Al-Fathir

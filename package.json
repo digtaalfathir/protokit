@@ -1,0 +1,11 @@
+{
+  "name": "protokit",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A kit of device communication protocols.",
+  "license": "MIT",
+  "author": "Rifky Andigta Al-Fathir",
+  "workspaces": [
+    "packages/*"
+  ]
+}
