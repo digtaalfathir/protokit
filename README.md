@@ -68,6 +68,8 @@ npm test --workspaces --if-present   # run tests across all packages
 
 ## Publishing
 
+📖 **First time? Full step-by-step walkthrough: [PUBLISHING.md](PUBLISHING.md).**
+
 Packages are **not** published automatically. To publish (or update) a package:
 
 **Prerequisites (one-time):**
