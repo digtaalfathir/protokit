@@ -15,7 +15,7 @@ scope, so you install only the protocol you need.
 |---|---|---|---|
 | [@digta/fins](packages/fins) | Omron FINS TCP | ✅ Working (app/service) | `npm i @digta/fins` |
 | [@digta/modbus](packages/modbus) | Modbus TCP/RTU | 🚧 Placeholder (demo in `examples/`) | `npm i @digta/modbus` |
-| [@digta/mcprotocol](packages/mcprotocol) | Mitsubishi MELSEC MC (SLMP) | 🚧 Placeholder | `npm i @digta/mcprotocol` |
+| [@digta/mcprotocol](packages/mcprotocol) | Mitsubishi MELSEC MC (1E/3E) | ✅ Working (fork of mcprotocol 0.1.2 + ASCII 3E framing fix) | `npm i @digta/mcprotocol` |
 | [@digta/openprotocol](packages/openprotocol) | Atlas Copco Open Protocol | 🚧 Placeholder | `npm i @digta/openprotocol` |
 
 **Status legend:** ✅ usable today · 🚧 scaffolded, implementation in progress.

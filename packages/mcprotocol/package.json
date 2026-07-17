@@ -1,29 +1,43 @@
 {
   "name": "@digta/mcprotocol",
-  "version": "0.1.0",
-  "description": "Mitsubishi MELSEC MC Protocol (SLMP) client for industrial PLC communication. Placeholder — implementation in progress.",
+  "version": "1.0.0",
+  "description": "Mitsubishi MELSEC MC (MELSEC Communication) protocol client for Ethernet PLCs. Fork of mcprotocol 0.1.2 with a TCP framing fix for ASCII 3E responses.",
   "keywords": [
     "mc-protocol",
     "mcprotocol",
     "mitsubishi",
     "melsec",
-    "slmp",
+    "qna3e",
+    "3e",
+    "fx3u",
     "plc",
     "industrial",
     "iot",
     "tcp",
-    "scada"
+    "ascii"
   ],
   "license": "MIT",
-  "author": "Rifky Andigta Al-Fathir",
-  "main": "index.js",
-  "exports": "./index.js",
+  "author": "Dana Moffit",
+  "contributors": [
+    "Rifky Andigta Al-Fathir (@digta fork)"
+  ],
+  "main": "mcprotocol.js",
+  "exports": "./mcprotocol.js",
   "files": [
-    "index.js"
+    "mcprotocol.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digtaalfathir/protokit.git",
     "directory": "packages/mcprotocol"
+  },
+  "scripts": {
+    "test": "node test/reassembly.test.js"
+  },
+  "dependencies": {
+    "underscore": "^1.13.1"
   }
 }
