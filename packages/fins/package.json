@@ -1,6 +1,6 @@
 {
   "name": "@digta/fins",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Omron FINS TCP client for PLC data acquisition (CP2E/NX) that forwards inputs to a DCS over a TCP socket.",
   "keywords": [
     "fins",
@@ -35,6 +35,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "omron-fins": "^0.5.0"
+    "omron-fins": "^1.0.0"
   }
 }
