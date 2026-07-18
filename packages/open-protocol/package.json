@@ -1,7 +1,7 @@
 {
   "name": "@digta/open-protocol",
   "version": "1.0.0",
-  "description": "Builder and parser for Atlas Copco Open Protocol MID frames (ASCII). Zero dependencies. Not related to Protocol Buffers.",
+  "description": "Atlas Copco Open Protocol for Node.js: MID frame codec plus an ergonomic TCP client (auto-reconnect, heartbeat, tightening events). Zero dependencies. Not related to Protocol Buffers.",
   "keywords": [
     "open-protocol",
     "atlas-copco",
@@ -17,9 +17,11 @@
   ],
   "license": "MIT",
   "author": "Rifky Andigta Al-Fathir",
-  "main": "openProtocol.js",
-  "exports": "./openProtocol.js",
+  "main": "index.js",
+  "exports": "./index.js",
   "files": [
+    "index.js",
+    "client.js",
     "openProtocol.js",
     "README.md",
     "LICENSE"
@@ -30,6 +32,6 @@
     "directory": "packages/open-protocol"
   },
   "scripts": {
-    "test": "node test/roundtrip.test.js"
+    "test": "node test/roundtrip.test.js && node test/client.test.js"
   }
 }
