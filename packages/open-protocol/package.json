@@ -1,6 +1,6 @@
 {
   "name": "@digta/open-protocol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Atlas Copco Open Protocol for Node.js: MID frame codec plus an ergonomic TCP client (auto-reconnect, heartbeat, tightening events). Zero dependencies. Not related to Protocol Buffers.",
   "keywords": [
     "open-protocol",

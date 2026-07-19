@@ -1,31 +1,36 @@
 {
   "name": "@digta/modbus",
-  "version": "0.1.0",
-  "description": "Modbus TCP/RTU client for industrial PLC communication. Placeholder — implementation in progress.",
+  "version": "1.0.0",
+  "description": "Modbus TCP client (master) for Node.js — read/write coils and registers with promises. Zero dependencies.",
   "keywords": [
     "modbus",
     "modbus-tcp",
-    "modbus-rtu",
-    "industrial",
+    "modbus-master",
+    "modbus-client",
     "plc",
+    "industrial",
     "iot",
-    "serial",
     "tcp",
-    "scada"
+    "scada",
+    "automation"
   ],
   "license": "MIT",
   "author": "Rifky Andigta Al-Fathir",
   "main": "index.js",
   "exports": "./index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "tcp-client.js",
+    "errors.js",
+    "README.md",
+    "LICENSE"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digtaalfathir/protokit.git",
     "directory": "packages/modbus"
   },
-  "devDependencies": {
-    "modbus-serial": "^8.0.18"
+  "scripts": {
+    "test": "node test/tcp-client.test.js"
   }
 }
