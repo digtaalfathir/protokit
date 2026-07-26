@@ -36,7 +36,7 @@ Nama paket `@digta/...` berarti scope **`digta`** harus kamu miliki.
 3. Pilih plan **Free** (cukup untuk paket publik).
 
 > Kalau nama `digta` ternyata sudah dipakai orang lain, kamu harus ganti scope
-> (misal `@digtaalfathir`) di **semua** `packages/*/package.json` pada field
+> (misal `@digtaalfathir`) di **semua** `node/*/package.json` pada field
 > `name`, lalu `npm install` lagi.
 
 ## 4. Login di terminal
@@ -99,7 +99,7 @@ mkdir /tmp/coba && cd /tmp/coba && npm init -y && npm i @digta/fins
 Versi yang sama **tidak bisa** dipublish dua kali. Untuk update:
 
 ```bash
-cd packages/fins
+cd node/fins
 npm version patch     # 1.0.0 -> 1.0.1 (patch/minor/major)
 cd ../..
 npm publish -w @digta/fins --access public

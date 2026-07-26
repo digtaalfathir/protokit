@@ -6,6 +6,6 @@
   "license": "MIT",
   "author": "Rifky Andigta Al-Fathir",
   "workspaces": [
-    "packages/*"
+    "node/*"
   ]
 }

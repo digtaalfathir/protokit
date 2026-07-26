@@ -29,7 +29,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digtaalfathir/protokit.git",
-    "directory": "packages/fins"
+    "directory": "node/fins"
   },
   "scripts": {
     "start": "node index.js"
