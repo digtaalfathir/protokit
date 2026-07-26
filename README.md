@@ -42,6 +42,9 @@ for layout and how to build, run, and autostart (systemd / pm2).
 | Package | Protocol | Status |
 |---|---|---|
 | [go/mcprotocol](go/mcprotocol) | Mitsubishi MELSEC MC (3E binary, word devices) | ✅ read/write words |
+| [go/modbus](go/modbus) | Modbus TCP (master) | ✅ read/write coils + registers |
+| [go/open-protocol](go/open-protocol) | Atlas Copco Open Protocol | ✅ codec + client (reconnect/heartbeat) |
+| [go/fins](go/fins) | Omron FINS/TCP | ✅ read/write memory areas |
 
 ## Install (Node.js)
 

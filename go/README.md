@@ -9,7 +9,11 @@ the target — you copy one file and run it).
 | Package | Protocol | Status |
 |---|---|---|
 | [mcprotocol](mcprotocol) | Mitsubishi MELSEC MC (3E binary, word devices) | ✅ read/write words |
+| [modbus](modbus) | Modbus TCP (master) | ✅ read/write coils + registers |
+| [open-protocol](open-protocol) | Atlas Copco Open Protocol | ✅ codec + client (reconnect/heartbeat) |
+| [fins](fins) | Omron FINS/TCP | ✅ read/write memory areas |
 
+All are Go ports of the matching `node/` packages, zero external dependencies.
 Runnable commands live in `cmd/` — e.g. `go run ./cmd/mcread`.
 
 ## Layout
