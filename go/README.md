@@ -4,7 +4,13 @@ The Go side of [Protokit](../README.md): device-communication libraries and
 runnable services, compiled to **single static binaries** (no runtime needed on
 the target — you copy one file and run it).
 
-🚧 **Skeleton.** The module is set up; protocol implementations come next.
+## Packages
+
+| Package | Protocol | Status |
+|---|---|---|
+| [mcprotocol](mcprotocol) | Mitsubishi MELSEC MC (3E binary, word devices) | ✅ read/write words |
+
+Runnable commands live in `cmd/` — e.g. `go run ./cmd/mcread`.
 
 ## Layout
 

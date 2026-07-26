@@ -35,10 +35,13 @@ only the protocol you need.
 
 ## Go (`go/`)
 
-🚧 **Skeleton.** The Go module is set up; protocol implementations are being
-added. Go compiles to a single static binary (no runtime needed on the target).
-See **[go/README.md](go/README.md)** for the layout and how to build, run, and
-autostart (systemd / pm2).
+Go module `github.com/digtaalfathir/protokit/go` — compiles to single static
+binaries (no runtime needed on the target). See **[go/README.md](go/README.md)**
+for layout and how to build, run, and autostart (systemd / pm2).
+
+| Package | Protocol | Status |
+|---|---|---|
+| [go/mcprotocol](go/mcprotocol) | Mitsubishi MELSEC MC (3E binary, word devices) | ✅ read/write words |
 
 ## Install (Node.js)
 
